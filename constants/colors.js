@@ -1,4 +1,7 @@
 export default {
-    background: 'hsl(240, 3%, 7%)',
-    grey: 'hsl(200, 1%, 51%)',
+    background: 'rgb(245, 245, 233)',
+    keys: 'hsl(200, 1%, 51%)',
+    correct: 'hsl(115, 29%, 43%)',
+    wrongLocation: 'hsl(49, 51%, 47%)',
+    wrong: 'hsl(240, 3%, 23%)',
 };

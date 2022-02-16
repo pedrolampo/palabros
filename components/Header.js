@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         position: 'absolute',
-        top: 30,
+        top: 50,
     },
     text: {
-        color: 'white',
+        color: 'black',
         fontSize: 30,
     },
 });

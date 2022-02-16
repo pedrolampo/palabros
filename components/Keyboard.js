@@ -2,12 +2,12 @@ import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
 
 import Colors from '../constants/colors';
+import targetWords from '../constants/targetWords';
 
 const Keyboard = (props) => {
     const keyPressHandler = (key) => {
         if (props.guess.length >= props.wordLength) return;
         props.setGuess((prevGuess) => (prevGuess += key));
-        props.setGuessLetter(key);
     };
 
     const submitGuessHandler = () => {
@@ -17,7 +17,20 @@ const Keyboard = (props) => {
             ]);
             return;
         }
+
+        if (!targetWords.includes(props.guess.toLowerCase())) {
+            Alert.alert('Error', 'No está en la lista de palabras.', [
+                { text: 'OK', style: 'default' },
+            ]);
+            return;
+        }
+
         props.setGuessNumber((prevGssNmb) => prevGssNmb + 1);
+        props.setSubmitedGuess(props.guess);
+    };
+
+    const deleteLetterHandler = () => {
+        props.setGuess((prevGuess) => prevGuess.slice(0, -1));
     };
 
     return (
@@ -220,7 +233,11 @@ const Keyboard = (props) => {
             >
                 <Text style={styles.keyText}>M</Text>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.6} style={styles.keySpecial}>
+            <TouchableOpacity
+                activeOpacity={0.6}
+                style={styles.keySpecial}
+                onPress={deleteLetterHandler}
+            >
                 <Text style={styles.keyText}>DEL</Text>
             </TouchableOpacity>
         </View>
@@ -239,21 +256,25 @@ const styles = StyleSheet.create({
     key: {
         width: 34,
         height: 38,
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.keys,
         borderRadius: 4,
+        borderWidth: 1,
+        borderColor: 'black',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 2,
     },
     keyText: {
-        fontSize: 22,
         color: 'white',
+        fontSize: 22,
     },
     keySpecial: {
         width: 53,
         height: 38,
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.keys,
         borderRadius: 5,
+        borderWidth: 1,
+        borderColor: 'black',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 2,
