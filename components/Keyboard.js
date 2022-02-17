@@ -6,11 +6,14 @@ import targetWords from '../constants/targetWords';
 
 const Keyboard = (props) => {
     const keyPressHandler = (key) => {
+        if (props.gameOver === true) return;
         if (props.guess.length >= props.wordLength) return;
         props.setGuess((prevGuess) => (prevGuess += key));
     };
 
     const submitGuessHandler = () => {
+        if (props.gameOver === true) return;
+
         if (props.guess.length < props.wordLength) {
             Alert.alert('Error', 'No hay suficientes letras', [
                 { text: 'OK', style: 'cancel' },
@@ -25,11 +28,25 @@ const Keyboard = (props) => {
             return;
         }
 
+        if (props.guessNumber === 0) props.setGuess1(props.guess);
+        if (props.guessNumber === 1) props.setGuess2(props.guess);
+        if (props.guessNumber === 2) props.setGuess3(props.guess);
+        if (props.guessNumber === 3) props.setGuess4(props.guess);
+        if (props.guessNumber === 4) props.setGuess5(props.guess);
+        if (props.guessNumber === 5) props.setGuess6(props.guess);
+
+        if (props.targetWord === props.guess.toLowerCase()) {
+            props.setGameOver(true);
+            return;
+        }
+
         props.setGuessNumber((prevGssNmb) => prevGssNmb + 1);
         props.setSubmitedGuess(props.guess);
+        props.setGuess('');
     };
 
     const deleteLetterHandler = () => {
+        if (props.gameOver === true) return;
         props.setGuess((prevGuess) => prevGuess.slice(0, -1));
     };
 
