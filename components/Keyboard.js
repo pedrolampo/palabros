@@ -205,7 +205,7 @@ const Keyboard = (props) => {
                 style={styles.keySpecial}
                 onPress={submitGuessHandler}
             >
-                <Text style={styles.keyText}>Intro</Text>
+                <Text style={styles.keyText}>Enter</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
     },
     key: {
         width: 34,
-        height: 38,
+        height: 42,
         backgroundColor: Colors.keys,
         borderRadius: 4,
         borderWidth: 1,
@@ -292,8 +292,8 @@ const styles = StyleSheet.create({
         fontSize: 22,
     },
     keySpecial: {
-        width: 53,
-        height: 38,
+        width: 54,
+        height: 42,
         backgroundColor: Colors.keys,
         borderRadius: 5,
         borderWidth: 1,
