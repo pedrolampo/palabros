@@ -8,6 +8,7 @@ import Keyboard from './components/Keyboard';
 
 import Colors from './constants/colors';
 import targetWords from './constants/targetWords';
+import Notification from './components/Notification';
 
 const WORD_LENGTH = 5;
 let targetWord;
@@ -22,6 +23,9 @@ newTargetWord();
 export default function App() {
     const [gameOver, setGameOver] = useState(false);
 
+    const [notification, setNotification] = useState(false);
+    const [notificationText, setNotificationText] = useState('');
+
     const [guess, setGuess] = useState('');
     const [submitedGuess, setSubmitedGuess] = useState('');
     const [guessNumber, setGuessNumber] = useState(0);
@@ -32,6 +36,26 @@ export default function App() {
     const [guess4, setGuess4] = useState('');
     const [guess5, setGuess5] = useState('');
     const [guess6, setGuess6] = useState('');
+
+    function customNotification(message) {
+        setNotification(true);
+        setNotificationText(message);
+    }
+
+    function restartGame() {
+        setGuess('');
+        setGuess1('');
+        setGuess2('');
+        setGuess3('');
+        setGuess4('');
+        setGuess5('');
+        setGuess6('');
+        setSubmitedGuess('');
+        setGuessNumber(0);
+        setGameOver(false);
+        setNotification(false);
+        newTargetWord();
+    }
 
     return (
         <View style={styles.screen}>
@@ -64,9 +88,19 @@ export default function App() {
                 setGuess4={setGuess4}
                 setGuess5={setGuess5}
                 setGuess6={setGuess6}
+                setNotification={customNotification}
                 setGuessNumber={setGuessNumber}
                 setSubmitedGuess={setSubmitedGuess}
+                restartGame={restartGame}
             />
+
+            <Notification
+                notification={notification}
+                notificationText={notificationText}
+                restartGame={restartGame}
+                text={notificationText.toUpperCase()}
+            />
+
             <StatusBar style="auto" />
         </View>
     );
