@@ -15,16 +15,12 @@ const Keyboard = (props) => {
         if (props.gameOver === true) return;
 
         if (props.guess.length < props.wordLength) {
-            Alert.alert('Error', 'No hay suficientes letras', [
-                { text: 'OK', style: 'cancel' },
-            ]);
+            props.setErrorNotification('No hay suficientes letras');
             return;
         }
 
         if (!targetWords.includes(props.guess.toLowerCase())) {
-            Alert.alert('Error', 'No está en la lista de palabras.', [
-                { text: 'OK', style: 'default' },
-            ]);
+            props.setErrorNotification('No está en la lista de palabras');
             return;
         }
 

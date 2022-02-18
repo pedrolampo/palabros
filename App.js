@@ -9,6 +9,7 @@ import Keyboard from './components/Keyboard';
 import Colors from './constants/colors';
 import targetWords from './constants/targetWords';
 import Notification from './components/Notification';
+import ErrorNotification from './components/ErrorNotification';
 
 const WORD_LENGTH = 5;
 let targetWord;
@@ -26,6 +27,9 @@ export default function App() {
     const [notification, setNotification] = useState(false);
     const [notificationText, setNotificationText] = useState('');
 
+    const [errorNotification, setErrorNotification] = useState(false);
+    const [errorNotificationText, setErrorNotificationText] = useState('');
+
     const [guess, setGuess] = useState('');
     const [submitedGuess, setSubmitedGuess] = useState('');
     const [guessNumber, setGuessNumber] = useState(0);
@@ -36,6 +40,11 @@ export default function App() {
     const [guess4, setGuess4] = useState('');
     const [guess5, setGuess5] = useState('');
     const [guess6, setGuess6] = useState('');
+
+    function errorNotificationHandler(message) {
+        setErrorNotification(true);
+        setErrorNotificationText(message);
+    }
 
     function customNotification(message) {
         setNotification(true);
@@ -89,14 +98,19 @@ export default function App() {
                 setGuess5={setGuess5}
                 setGuess6={setGuess6}
                 setNotification={customNotification}
+                setErrorNotification={errorNotificationHandler}
                 setGuessNumber={setGuessNumber}
                 setSubmitedGuess={setSubmitedGuess}
                 restartGame={restartGame}
             />
 
+            <ErrorNotification
+                errorNotification={errorNotification}
+                setErrorNotification={setErrorNotification}
+                text={errorNotificationText}
+            />
             <Notification
                 notification={notification}
-                notificationText={notificationText}
                 restartGame={restartGame}
                 text={notificationText.toUpperCase()}
             />
