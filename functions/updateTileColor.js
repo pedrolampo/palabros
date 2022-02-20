@@ -1,4 +1,42 @@
-import { styles } from '../components/GuessGrid';
+import Colors from '../constants/colors';
+
+const styles = {
+    mainContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 312,
+        marginTop: -100,
+    },
+    tile: {
+        margin: 5,
+        width: 52,
+        height: 52,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 1,
+        borderColor: 'hsl(240, 2%, 23%)',
+        borderWidth: 1,
+    },
+    guessLetter: {
+        color: 'black',
+        fontSize: 35,
+    },
+    wrong: {
+        backgroundColor: Colors.wrong,
+    },
+    wrongLocation: {
+        backgroundColor: Colors.wrongLocation,
+    },
+    correct: {
+        backgroundColor: Colors.correct,
+    },
+    whiteLetter: {
+        color: 'white',
+        fontSize: 35,
+    },
+};
 
 function updateTileColor(guessCAPS, targetWord, index) {
     let guess = guessCAPS.toLowerCase();
