@@ -1,6 +1,6 @@
 {
     "name": "palabros",
-    "version": "1.0.5",
+    "version": "1.2.0",
     "scripts": {
         "start": "expo start --dev-client",
         "android": "expo run:android",

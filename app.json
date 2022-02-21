@@ -2,7 +2,7 @@
     "expo": {
         "name": "Palabros",
         "slug": "palabros",
-        "version": "1.1.0",
+        "version": "1.2.0",
         "orientation": "portrait",
         "icon": "./assets/palabros512x512.png",
         "splash": {
@@ -17,7 +17,7 @@
         "ios": {
             "supportsTablet": true,
             "bundleIdentifier": "com.pedrolampo.palabros",
-            "buildNumber": "1.1.0"
+            "buildNumber": "1.2.0"
         },
         "android": {
             "adaptiveIcon": {
@@ -25,7 +25,7 @@
                 "backgroundColor": "#FFFFFF"
             },
             "package": "com.pedrolampo.palabros",
-            "versionCode": 2,
+            "versionCode": 3,
             "permissions": []
         },
         "web": {
