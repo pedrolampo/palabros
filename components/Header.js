@@ -1,17 +1,24 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const Header = () => {
     return (
         <View style={styles.header}>
-            <Text style={styles.text}>Palabros</Text>
+            <TouchableOpacity>
+                <Text style={styles.text}>Menu</Text>
+            </TouchableOpacity>
+            <Text style={styles.title}>PALABROS</Text>
+            <TouchableOpacity>
+                <Text style={styles.text}>Reset</Text>
+            </TouchableOpacity>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     header: {
-        justifyContent: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
         width: '100%',
         position: 'absolute',
@@ -19,7 +26,11 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'black',
+        fontSize: 20,
+    },
+    title: {
         fontSize: 30,
+        color: 'black',
     },
 });
 
