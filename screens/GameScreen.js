@@ -21,7 +21,7 @@ const newTargetWord = () => {
 
 newTargetWord();
 
-export default function GameScreen() {
+export default function GameScreen({ renderGame }) {
     const [gameOver, setGameOver] = useState(false);
 
     const [notification, setNotification] = useState(false);
@@ -68,7 +68,7 @@ export default function GameScreen() {
 
     return (
         <View style={styles.screen}>
-            <Header />
+            <Header renderGame={renderGame} restart={restartGame} />
 
             <GuessGrid
                 guess={guess}
@@ -123,6 +123,7 @@ export default function GameScreen() {
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
+        width: '100%',
         flexDirection: 'column',
         backgroundColor: Colors.background,
         alignItems: 'center',

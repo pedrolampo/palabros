@@ -6,7 +6,7 @@ export default function MainScreen({ renderGame }) {
         <View style={styles.container}>
             <Text style={styles.title}>PALABROS</Text>
             <View style={styles.menu}>
-                <TouchableOpacity onPress={renderGame}>
+                <TouchableOpacity onPress={() => renderGame(true)}>
                     <Text style={styles.menuText}>JUGAR</Text>
                 </TouchableOpacity>
             </View>

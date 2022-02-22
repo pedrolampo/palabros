@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Header = () => {
+const Header = ({ renderGame, restart }) => {
     return (
         <View style={styles.header}>
-            <TouchableOpacity>
-                <Text style={styles.text}>Menu</Text>
+            <TouchableOpacity onPress={() => renderGame(false)}>
+                <Text style={styles.text}>MENU</Text>
             </TouchableOpacity>
             <Text style={styles.title}>PALABROS</Text>
-            <TouchableOpacity>
-                <Text style={styles.text}>Reset</Text>
+            <TouchableOpacity onPress={restart}>
+                <Text style={styles.text}>RESET</Text>
             </TouchableOpacity>
         </View>
     );
