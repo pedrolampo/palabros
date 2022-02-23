@@ -4,11 +4,13 @@ import { StyleSheet, View, BackHandler } from 'react-native';
 
 import MainScreen from './screens/MainScreen';
 import GameScreen from './screens/GameScreen';
+import DailyGameScreen from './screens/DailyGameScreen';
+import HowToPlay from './screens/HowToPlay';
 
 import Colors from './constants/colors';
 
 export default function App() {
-    const [normalGame, setNormalGame] = useState(false);
+    const [normalGame, setNormalGame] = useState('menu');
 
     useEffect(() => {
         const backHandler = BackHandler.addEventListener(
@@ -19,8 +21,15 @@ export default function App() {
     }, []);
 
     const RenderGame = () => {
-        if (normalGame) return <GameScreen renderGame={setNormalGame} />;
-        else return <MainScreen renderGame={setNormalGame} />;
+        if (normalGame === 'normal') {
+            return <GameScreen renderGame={setNormalGame} />;
+        }
+        if (normalGame === 'daily') {
+            return <DailyGameScreen renderGame={setNormalGame} />;
+        }
+        if (normalGame === 'instructions') {
+            return <HowToPlay renderGame={setNormalGame} />;
+        } else return <MainScreen renderGame={setNormalGame} />;
     };
 
     return (

@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 const Header = ({ renderGame, restart }) => {
     return (
         <View style={styles.header}>
-            <TouchableOpacity onPress={() => renderGame(false)}>
+            <TouchableOpacity onPress={() => renderGame('menu')}>
                 <Text style={styles.text}>MENU</Text>
             </TouchableOpacity>
             <Text style={styles.title}>PALABROS</Text>

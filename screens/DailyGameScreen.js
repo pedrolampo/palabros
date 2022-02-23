@@ -15,12 +15,15 @@ const WORD_LENGTH = 5;
 let targetWord;
 
 const newTargetWord = () => {
-    targetWord = targetWords[parseInt(Math.random() * (2315 - 1) + 1)];
+    const offsetFromDate = new Date(2022, 0, 1);
+    const msOffset = Date.now() - offsetFromDate;
+    const dayOffset = msOffset / 1000 / 60 / 60 / 24;
+    targetWord = targetWords[parseInt(dayOffset)];
 };
 
 newTargetWord();
 
-export default function GameScreen({ renderGame }) {
+export default function DailyGameScreen({ renderGame }) {
     const [gameOver, setGameOver] = useState(false);
 
     const [notification, setNotification] = useState(false);
