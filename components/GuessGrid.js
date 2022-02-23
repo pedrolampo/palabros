@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import updateTileColor, { updateTextColor } from '../functions/updateTileColor';
 
-import Colors from '../constants/colors';
+import { SizeContext } from '../App';
 
 const GuessGrid = (props) => {
+    const { width } = useContext(SizeContext);
+
     return (
-        <View style={styles.mainContainer}>
+        <View
+            style={width < 380 ? styles.mainContainerS : styles.mainContainerL}
+        >
             <View style={updateTileColor(props.guess1, props.targetWord, 0)}>
                 <Text style={updateTextColor(props.guess1)}>
                     {(props.guessNumber === 0 && props.guess.charAt(0)) ||
@@ -197,7 +201,7 @@ const GuessGrid = (props) => {
 };
 
 export const styles = StyleSheet.create({
-    mainContainer: {
+    mainContainerL: {
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
@@ -205,32 +209,12 @@ export const styles = StyleSheet.create({
         width: 312,
         marginTop: -100,
     },
-    tile: {
-        margin: 5,
-        width: 52,
-        height: 52,
+    mainContainerS: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 1,
-        borderColor: 'hsl(240, 2%, 23%)',
-        borderWidth: 1,
-    },
-    guessLetter: {
-        color: 'black',
-        fontSize: 35,
-    },
-    wrong: {
-        backgroundColor: Colors.wrong,
-    },
-    wrongLocation: {
-        backgroundColor: Colors.wrongLocation,
-    },
-    correct: {
-        backgroundColor: Colors.correct,
-    },
-    whiteLetter: {
-        color: 'white',
-        fontSize: 35,
+        width: 312,
     },
 });
 

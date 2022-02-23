@@ -14,12 +14,17 @@ import HowToPlay from './screens/HowToPlay';
 
 import Colors from './constants/colors';
 
+export const SizeContext = React.createContext();
+
 export default function App() {
     const [normalGame, setNormalGame] = useState('menu');
 
     const { height, width } = useWindowDimensions();
-    console.log(height);
-    console.log(width);
+
+    const value = {
+        height,
+        width,
+    };
 
     useEffect(() => {
         const backHandler = BackHandler.addEventListener(
@@ -45,8 +50,10 @@ export default function App() {
 
     return (
         <View style={styles.screen}>
-            <RenderGame />
-            <StatusBar style="auto" />
+            <SizeContext.Provider value={value}>
+                <RenderGame />
+                <StatusBar style="auto" />
+            </SizeContext.Provider>
         </View>
     );
 }

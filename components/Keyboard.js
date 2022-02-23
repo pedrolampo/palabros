@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
+import { SizeContext } from '../App';
 import Colors from '../constants/colors';
 import targetWords from '../constants/targetWords';
 
 const Keyboard = (props) => {
+    const { width } = useContext(SizeContext);
+
     const keyPressHandler = (key) => {
         if (props.gameOver === true) return;
         if (props.guess.length >= props.wordLength) return;
@@ -53,218 +56,276 @@ const Keyboard = (props) => {
     };
 
     return (
-        <View style={styles.keyboard}>
+        <View style={width < 380 ? styles.keyboardS : styles.keyboardL}>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'Q')}
             >
-                <Text style={styles.keyText}>Q</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    Q
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'W')}
             >
-                <Text style={styles.keyText}>W</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    W
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'E')}
             >
-                <Text style={styles.keyText}>E</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    E
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'R')}
             >
-                <Text style={styles.keyText}>R</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    R
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'T')}
             >
-                <Text style={styles.keyText}>T</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    T
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'Y')}
             >
-                <Text style={styles.keyText}>Y</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    Y
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'U')}
             >
-                <Text style={styles.keyText}>U</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    U
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'I')}
             >
-                <Text style={styles.keyText}>I</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    I
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'O')}
             >
-                <Text style={styles.keyText}>O</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    O
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'P')}
             >
-                <Text style={styles.keyText}>P</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    P
+                </Text>
             </TouchableOpacity>
             <View></View>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'A')}
             >
-                <Text style={styles.keyText}>A</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    A
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'S')}
             >
-                <Text style={styles.keyText}>S</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    S
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'D')}
             >
-                <Text style={styles.keyText}>D</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    D
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'F')}
             >
-                <Text style={styles.keyText}>F</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    F
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'G')}
             >
-                <Text style={styles.keyText}>G</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    G
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'H')}
             >
-                <Text style={styles.keyText}>H</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    H
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'J')}
             >
-                <Text style={styles.keyText}>J</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    J
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'K')}
             >
-                <Text style={styles.keyText}>K</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    K
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'L')}
             >
-                <Text style={styles.keyText}>L</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    L
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'Ñ')}
             >
-                <Text style={styles.keyText}>Ñ</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    Ñ
+                </Text>
             </TouchableOpacity>
             <View></View>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.keySpecial}
+                style={width < 380 ? styles.keySpecialS : styles.keySpecialL}
                 onPress={submitGuessHandler}
             >
-                <Text style={styles.keyText}>Enter</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    Enter
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'Z')}
             >
-                <Text style={styles.keyText}>Z</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    Z
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'X')}
             >
-                <Text style={styles.keyText}>X</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    X
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'C')}
             >
-                <Text style={styles.keyText}>C</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    C
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'V')}
             >
-                <Text style={styles.keyText}>V</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    V
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'B')}
             >
-                <Text style={styles.keyText}>B</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    B
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'N')}
             >
-                <Text style={styles.keyText}>N</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    N
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.key}
+                style={width < 380 ? styles.keyS : styles.keyL}
                 onPress={keyPressHandler.bind(this, 'M')}
             >
-                <Text style={styles.keyText}>M</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    M
+                </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={styles.keySpecial}
+                style={width < 380 ? styles.keySpecialS : styles.keySpecialL}
                 onPress={deleteLetterHandler}
             >
-                <Text style={styles.keyText}>DEL</Text>
+                <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
+                    DEL
+                </Text>
             </TouchableOpacity>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    keyboard: {
+    keyboardL: {
         position: 'absolute',
         bottom: 35,
         width: 400,
@@ -272,7 +333,15 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         justifyContent: 'center',
     },
-    key: {
+    keyboardS: {
+        position: 'absolute',
+        bottom: 10,
+        width: 350,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+    },
+    keyL: {
         width: 34,
         height: 42,
         backgroundColor: Colors.keys,
@@ -283,15 +352,41 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin: 2,
     },
-    keyText: {
+    keyS: {
+        width: 30,
+        height: 38,
+        backgroundColor: Colors.keys,
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: 'black',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 2,
+    },
+    keyTextL: {
         color: 'white',
         fontSize: 22,
     },
-    keySpecial: {
+    keyTextS: {
+        color: 'white',
+        fontSize: 18,
+    },
+    keySpecialL: {
         width: 54,
         height: 42,
         backgroundColor: Colors.keys,
-        borderRadius: 5,
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: 'black',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 2,
+    },
+    keySpecialS: {
+        width: 47,
+        height: 38,
+        backgroundColor: Colors.keys,
+        borderRadius: 4,
         borderWidth: 1,
         borderColor: 'black',
         justifyContent: 'center',
