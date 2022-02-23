@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import {
-    StyleSheet,
-    View,
-    BackHandler,
-    useWindowDimensions,
-} from 'react-native';
+import { StyleSheet, View, BackHandler } from 'react-native';
 
 import MainScreen from './screens/MainScreen';
 import GameScreen from './screens/GameScreen';
@@ -14,17 +9,8 @@ import HowToPlay from './screens/HowToPlay';
 
 import Colors from './constants/colors';
 
-export const SizeContext = React.createContext();
-
 export default function App() {
     const [normalGame, setNormalGame] = useState('menu');
-
-    const { height, width } = useWindowDimensions();
-
-    const value = {
-        height,
-        width,
-    };
 
     useEffect(() => {
         const backHandler = BackHandler.addEventListener(
@@ -50,10 +36,8 @@ export default function App() {
 
     return (
         <View style={styles.screen}>
-            <SizeContext.Provider value={value}>
-                <RenderGame />
-                <StatusBar style="auto" />
-            </SizeContext.Provider>
+            <RenderGame />
+            <StatusBar style="auto" />
         </View>
     );
 }

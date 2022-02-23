@@ -1,11 +1,9 @@
-import React, { useContext } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, useWindowDimensions } from 'react-native';
 import updateTileColor, { updateTextColor } from '../functions/updateTileColor';
 
-import { SizeContext } from '../App';
-
 const GuessGrid = (props) => {
-    const { width } = useContext(SizeContext);
+    const { width } = useWindowDimensions();
 
     return (
         <View

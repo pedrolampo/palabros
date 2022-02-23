@@ -1,12 +1,17 @@
-import React, { useContext } from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import {
+    View,
+    TouchableOpacity,
+    Text,
+    StyleSheet,
+    useWindowDimensions,
+} from 'react-native';
 
-import { SizeContext } from '../App';
 import Colors from '../constants/colors';
 import targetWords from '../constants/targetWords';
 
 const Keyboard = (props) => {
-    const { width } = useContext(SizeContext);
+    const { width } = useWindowDimensions();
 
     const keyPressHandler = (key) => {
         if (props.gameOver === true) return;

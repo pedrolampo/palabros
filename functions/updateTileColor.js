@@ -1,7 +1,5 @@
-import { useContext } from 'react';
 import { useWindowDimensions } from 'react-native';
 
-import { SizeContext } from '../App';
 import Colors from '../constants/colors';
 
 const styles = {
@@ -53,7 +51,7 @@ const styles = {
 };
 
 function updateTileColor(guessCAPS, targetWord, index) {
-    const { width } = useContext(SizeContext);
+    const { width } = useWindowDimensions();
 
     let guess = guessCAPS.toLowerCase();
 

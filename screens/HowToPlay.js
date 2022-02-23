@@ -1,11 +1,16 @@
-import React, { useContext } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity,
+    useWindowDimensions,
+} from 'react-native';
 
-import { SizeContext } from '../App';
 import Colors from '../constants/colors';
 
 export default function HowToPlay({ renderGame }) {
-    const { width } = useContext(SizeContext);
+    const { width } = useWindowDimensions();
 
     return (
         <View style={styles.screen}>
