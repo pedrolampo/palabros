@@ -15,7 +15,7 @@ const WORD_LENGTH = 5;
 let targetWord;
 
 const newTargetWord = () => {
-    targetWord = targetWords[parseInt(Math.random() * (2315 - 1) + 1)];
+    targetWord = targetWords[parseInt(Math.random() * (3749 - 1) + 1)];
 };
 
 newTargetWord();
