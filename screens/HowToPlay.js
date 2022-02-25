@@ -6,6 +6,7 @@ import {
     TouchableOpacity,
     useWindowDimensions,
 } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import Colors from '../constants/colors';
 
@@ -13,12 +14,17 @@ export default function HowToPlay({ renderGame }) {
     const { width } = useWindowDimensions();
 
     return (
-        <View style={styles.screen}>
-            <View style={width < 380 ? styles.headerS : styles.headerL}>
-                <TouchableOpacity onPress={() => renderGame('menu')}>
-                    <Text>VOLVER AL MENÚ</Text>
-                </TouchableOpacity>
-            </View>
+        <LinearGradient
+            colors={['#296636', '#419152', '#001c01']}
+            style={styles.screen}
+        >
+            <TouchableOpacity
+                activeOpacity={0.75}
+                style={width < 380 ? styles.headerS : styles.headerL}
+                onPress={() => renderGame('menu')}
+            >
+                <Text>VOLVER AL MENÚ</Text>
+            </TouchableOpacity>
             <View style={styles.container}>
                 <View>
                     <Text style={width < 380 ? styles.titleS : styles.titleL}>
@@ -116,7 +122,7 @@ export default function HowToPlay({ renderGame }) {
                     </View>
                 </View>
             </View>
-        </View>
+        </LinearGradient>
     );
 }
 
@@ -211,7 +217,7 @@ const styles = StyleSheet.create({
         color: 'black',
     },
     exampleTextS: {
-        fontSize: 18,
+        fontSize: 15,
         color: 'black',
     },
 });

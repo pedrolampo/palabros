@@ -29,7 +29,7 @@ const styles = {
     },
     guessLetterS: {
         color: 'black',
-        fontSize: 27,
+        fontSize: 25,
     },
     whiteLetterL: {
         color: 'white',
@@ -37,7 +37,7 @@ const styles = {
     },
     whiteLetterS: {
         color: 'white',
-        fontSize: 27,
+        fontSize: 25,
     },
     wrong: {
         backgroundColor: Colors.wrong,

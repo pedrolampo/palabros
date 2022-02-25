@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Header from '../components/Header';
 import GuessGrid from '../components/GuessGrid';
@@ -82,11 +82,19 @@ export default function DailyGameScreen({
     // HACER QUE NO TE DEJE JUGAR SI YA LO HICISTE
     if (JSON.stringify(dailyWordAllowed).includes('won')) {
         return (
-            <DailyWordNotification status="ganaste" targetWord={targetWord} />
+            <DailyWordNotification
+                status="ganaste"
+                targetWord={targetWord}
+                renderGame={renderGame}
+            />
         );
     } else if (JSON.stringify(dailyWordAllowed).includes('lost')) {
         return (
-            <DailyWordNotification status="perdiste" targetWord={targetWord} />
+            <DailyWordNotification
+                status="perdiste"
+                targetWord={targetWord}
+                renderGame={renderGame}
+            />
         );
     }
 
