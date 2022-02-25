@@ -19,6 +19,7 @@ const newTargetWord = () => {
 };
 
 newTargetWord();
+console.log(targetWord);
 
 export default function GameScreen({ renderGame }) {
     const [gameOver, setGameOver] = useState(false);

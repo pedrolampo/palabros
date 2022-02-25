@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, BackHandler } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import MainScreen from './screens/MainScreen';
 import GameScreen from './screens/GameScreen';
 import DailyGameScreen from './screens/DailyGameScreen';
 import HowToPlay from './screens/HowToPlay';
 
+import { allowDailyWord } from './functions/allowDailyWord';
 import Colors from './constants/colors';
 
 export default function App() {
     const [normalGame, setNormalGame] = useState('menu');
+    const dailyWordAllowed = useRef('true');
 
     useEffect(() => {
         const backHandler = BackHandler.addEventListener(
@@ -20,12 +23,34 @@ export default function App() {
         return () => backHandler.remove();
     }, []);
 
+    const storedData = async () => {
+        await AsyncStorage.setItem(
+            '@dailyWordAllowed',
+            JSON.stringify(dailyWordAllowed)
+        );
+    };
+
+    const getData = async () => {
+        const isAllowed = await AsyncStorage.getItem('@dailyWordAllowed');
+        dailyWordAllowed.current = isAllowed;
+    };
+
+    allowDailyWord(dailyWordAllowed, storedData);
+    getData();
+
     const RenderGame = () => {
         if (normalGame === 'normal') {
             return <GameScreen renderGame={setNormalGame} />;
         }
         if (normalGame === 'daily') {
-            return <DailyGameScreen renderGame={setNormalGame} />;
+            return (
+                <DailyGameScreen
+                    renderGame={setNormalGame}
+                    storeData={storedData}
+                    getData={getData}
+                    dailyWordAllowed={dailyWordAllowed}
+                />
+            );
         }
         if (normalGame === 'instructions') {
             return <HowToPlay renderGame={setNormalGame} />;

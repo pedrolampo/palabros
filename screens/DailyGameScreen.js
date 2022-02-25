@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
 
 import Header from '../components/Header';
 import GuessGrid from '../components/GuessGrid';
 import Keyboard from '../components/Keyboard';
 
+import { allowDailyWord } from '../functions/allowDailyWord';
 import Colors from '../constants/colors';
 import targetWords from '../constants/targetWords';
 import Notification from '../components/Notification';
 import ErrorNotification from '../components/ErrorNotification';
+import DailyWordNotification from '../components/DailyWordNotification';
 
 const WORD_LENGTH = 5;
 let targetWord;
@@ -22,8 +24,14 @@ const newTargetWord = () => {
 };
 
 newTargetWord();
+console.log(targetWord);
 
-export default function DailyGameScreen({ renderGame }) {
+export default function DailyGameScreen({
+    renderGame,
+    storeData,
+    getData,
+    dailyWordAllowed,
+}) {
     const [gameOver, setGameOver] = useState(false);
 
     const [notification, setNotification] = useState(false);
@@ -68,6 +76,20 @@ export default function DailyGameScreen({ renderGame }) {
         newTargetWord();
     }
 
+    allowDailyWord(dailyWordAllowed, storeData);
+    getData();
+
+    // HACER QUE NO TE DEJE JUGAR SI YA LO HICISTE
+    if (JSON.stringify(dailyWordAllowed).includes('won')) {
+        return (
+            <DailyWordNotification status="ganaste" targetWord={targetWord} />
+        );
+    } else if (JSON.stringify(dailyWordAllowed).includes('lost')) {
+        return (
+            <DailyWordNotification status="perdiste" targetWord={targetWord} />
+        );
+    }
+
     return (
         <View style={styles.screen}>
             <Header renderGame={renderGame} restart={restartGame} />
@@ -104,6 +126,8 @@ export default function DailyGameScreen({ renderGame }) {
                 setGuessNumber={setGuessNumber}
                 setSubmitedGuess={setSubmitedGuess}
                 restartGame={restartGame}
+                dailyWordAllowed={dailyWordAllowed}
+                storeData={storeData}
             />
 
             <ErrorNotification
