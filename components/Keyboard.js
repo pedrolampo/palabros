@@ -42,15 +42,15 @@ const Keyboard = (props) => {
         if (props.targetWord === props.guess.toLowerCase()) {
             props.setGameOver(true);
             props.setNotification('Has ganado!');
-            props.dailyWordAllowed.current = 'won';
-            props.storeData();
+            if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'won';
+            if (props.storeData) props.storeData();
             return;
         }
 
         if (props.guessNumber >= 5) {
             props.setNotification(props.targetWord);
-            props.dailyWordAllowed.current = 'lost';
-            props.storeData();
+            if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'lost';
+            if (props.storeData) props.storeData();
             return;
         }
 
