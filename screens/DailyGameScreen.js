@@ -24,7 +24,6 @@ const newTargetWord = () => {
 };
 
 newTargetWord();
-console.log(targetWord);
 
 export default function DailyGameScreen({
     renderGame,
