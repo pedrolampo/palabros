@@ -5,6 +5,7 @@ import {
     TouchableOpacity,
     StyleSheet,
     Linking,
+    Image,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -14,7 +15,10 @@ export default function MainScreen({ renderGame }) {
             colors={['#39DA80', '#6bdbad', '#48EBE5']}
             style={styles.container}
         >
-            <Text style={styles.title}>Palabros</Text>
+            <Image
+                style={styles.title}
+                source={require('../assets/sin-fondo.png')}
+            />
             <View style={styles.menu}>
                 <TouchableOpacity
                     activeOpacity={0.75}
@@ -57,12 +61,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#296636',
     },
     title: {
-        fontSize: 50,
-        color: '#313333',
-        fontFamily: 'Roboto',
+        width: '100%',
+        height: 220,
+        resizeMode: 'stretch',
+        margin: -20,
     },
     menu: {
-        marginTop: 100,
+        marginTop: 5,
     },
     menuButtons: {
         padding: 8,
