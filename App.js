@@ -8,12 +8,14 @@ import GameScreen from './screens/GameScreen';
 import DailyGameScreen from './screens/DailyGameScreen';
 import HowToPlay from './screens/HowToPlay';
 
+import { myFonts } from './constants/fonts';
 import { allowDailyWord } from './functions/allowDailyWord';
 import Colors from './constants/colors';
 
 export default function App() {
     const [normalGame, setNormalGame] = useState('menu');
     const dailyWordAllowed = useRef('true');
+    myFonts();
 
     useEffect(() => {
         const backHandler = BackHandler.addEventListener(

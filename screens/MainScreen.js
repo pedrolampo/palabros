@@ -70,17 +70,19 @@ const styles = StyleSheet.create({
         marginTop: 5,
     },
     menuButtons: {
-        padding: 8,
+        padding: 10,
         paddingHorizontal: 50,
         marginVertical: 10,
-        borderWidth: 0.75,
-        borderColor: 'grey',
-        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: 'black',
+        borderRadius: 5,
         backgroundColor: '#b0e9f7',
     },
     menuText: {
         fontSize: 25,
         textAlign: 'center',
+        fontFamily: 'MontserratMedium',
+        fontWeight: '600',
     },
     footer: {
         position: 'absolute',

@@ -28,7 +28,7 @@ export default function HowToPlay({ renderGame }) {
             <View style={styles.container}>
                 <View>
                     <Text style={width < 380 ? styles.titleS : styles.titleL}>
-                        JUEGO DIARIO
+                        Juego Diario
                     </Text>
                     <Text style={width < 380 ? styles.textS : styles.textL}>
                         Adivina la palabra del día!
@@ -39,7 +39,7 @@ export default function HowToPlay({ renderGame }) {
                 </View>
                 <View>
                     <Text style={width < 380 ? styles.titleS : styles.titleL}>
-                        JUEGO NORMAL
+                        Juego Normal
                     </Text>
                     <Text style={width < 380 ? styles.textS : styles.textL}>
                         Adivina la palabra clave!
@@ -160,6 +160,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 15,
         color: 'black',
+        fontFamily: 'MontserratMedium',
     },
     titleS: {
         fontSize: 15,
@@ -167,6 +168,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 8,
         color: 'black',
+        fontFamily: 'MontserratMedium',
     },
     textL: {
         fontSize: 16,
@@ -174,6 +176,7 @@ const styles = StyleSheet.create({
         width: 280,
         paddingRight: 10,
         color: '#343838',
+        fontFamily: 'MontserratMedium',
     },
     textS: {
         fontSize: 12,
@@ -181,6 +184,7 @@ const styles = StyleSheet.create({
         width: 280,
         paddingRight: 8,
         color: '#343838',
+        fontFamily: 'MontserratMedium',
     },
     colorInstructions: {
         flexDirection: 'row',
@@ -216,9 +220,11 @@ const styles = StyleSheet.create({
     exampleTextL: {
         fontSize: 25,
         color: 'black',
+        fontFamily: 'MontserratMedium',
     },
     exampleTextS: {
         fontSize: 15,
         color: 'black',
+        fontFamily: 'MontserratMedium',
     },
 });

@@ -42,22 +42,26 @@ const styles = StyleSheet.create({
     textL: {
         color: 'black',
         fontSize: 20,
+        fontFamily: 'MontserratMedium',
     },
     textS: {
         color: 'black',
         fontSize: 15,
+        fontFamily: 'MontserratMedium',
     },
     titleL: {
         fontSize: 30,
         color: 'black',
         width: 200,
         textAlign: 'center',
+        fontFamily: 'MontserratMedium',
     },
     titleS: {
         fontSize: 20,
         color: 'black',
         width: 200,
         textAlign: 'center',
+        fontFamily: 'MontserratMedium',
     },
 });
 

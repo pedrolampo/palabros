@@ -49,11 +49,13 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 30,
+        fontFamily: 'MontserratBold',
     },
     text: {
         fontSize: 22,
         marginTop: 10,
         textAlign: 'center',
+        fontFamily: 'MontserratMedium',
     },
     button: {
         justifyContent: 'center',
@@ -69,5 +71,6 @@ const styles = StyleSheet.create({
         color: 'black',
         paddingHorizontal: 10,
         fontSize: 18,
+        fontFamily: 'MontserratMedium',
     },
 });
