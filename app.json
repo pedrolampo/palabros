@@ -2,13 +2,13 @@
     "expo": {
         "name": "Palabros",
         "slug": "palabros",
-        "version": "1.7.0",
+        "version": "1.8.0",
         "orientation": "portrait",
-        "icon": "./assets/icon1024.png",
+        "icon": "./assets/512.png",
         "splash": {
             "image": "./assets/splash.png",
             "resizeMode": "contain",
-            "backgroundColor": "#419152"
+            "backgroundColor": "#48EBE5"
         },
         "updates": {
             "fallbackToCacheTimeout": 0
@@ -17,19 +17,19 @@
         "ios": {
             "supportsTablet": true,
             "bundleIdentifier": "com.pedrolampo.palabros",
-            "buildNumber": "1.7.0"
+            "buildNumber": "1.8.0"
         },
         "android": {
             "adaptiveIcon": {
-                "foregroundImage": "./assets/icon1024.png",
-                "backgroundColor": "#419152"
+                "foregroundImage": "./assets/512.png",
+                "backgroundColor": "#48EBE5"
             },
             "package": "com.pedrolampo.palabros",
-            "versionCode": 8,
+            "versionCode": 9,
             "permissions": []
         },
         "web": {
-            "favicon": "./assets/icon1024.png"
+            "favicon": "./assets/512.png"
         },
         "description": ""
     }

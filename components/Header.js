@@ -14,15 +14,15 @@ const Header = ({ renderGame, restart }) => {
         <View style={styles.header}>
             <TouchableOpacity onPress={() => renderGame('menu')}>
                 <Text style={width < 380 ? styles.textS : styles.textL}>
-                    MENU
+                    Menú
                 </Text>
             </TouchableOpacity>
             <Text style={width < 380 ? styles.titleS : styles.titleL}>
-                PALABROS
+                Palabros
             </Text>
             <TouchableOpacity onPress={restart}>
                 <Text style={width < 380 ? styles.textS : styles.textL}>
-                    RESET
+                    Reset
                 </Text>
             </TouchableOpacity>
         </View>
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         width: '100%',
         position: 'absolute',
         top: 50,
+        paddingHorizontal: 10,
     },
     textL: {
         color: 'black',
@@ -49,10 +50,14 @@ const styles = StyleSheet.create({
     titleL: {
         fontSize: 30,
         color: 'black',
+        width: 200,
+        textAlign: 'center',
     },
     titleS: {
-        fontSize: 25,
+        fontSize: 20,
         color: 'black',
+        width: 200,
+        textAlign: 'center',
     },
 });
 

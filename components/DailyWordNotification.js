@@ -2,8 +2,6 @@ import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import Colors from '../constants/colors';
-
 export default function DailyWordNotification({
     status,
     targetWord,
@@ -11,14 +9,14 @@ export default function DailyWordNotification({
 }) {
     return (
         <LinearGradient
-            colors={['#296636', '#419152', '#001c01']}
+            colors={['#39DA80', '#6bdbad', '#48EBE5']}
             style={styles.screen}
         >
             <View style={styles.card}>
                 <View
                     style={{ justifyContent: 'center', alignItems: 'center' }}
                 >
-                    <Text style={styles.title}>{status.toUpperCase()}!</Text>
+                    <Text style={styles.title}>¡{status.toUpperCase()}!</Text>
                     <Text style={styles.text}>
                         La palabra de hoy era: {targetWord.toUpperCase()}
                     </Text>
@@ -47,11 +45,7 @@ const styles = StyleSheet.create({
         width: 300,
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        backgroundColor: Colors.keys,
-        padding: 20,
-        borderWidth: 1,
-        borderColor: 'black',
-        borderRadius: 10,
+        backgroundColor: 'transparent',
     },
     title: {
         fontSize: 30,
@@ -64,15 +58,16 @@ const styles = StyleSheet.create({
     button: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: Colors.wrong,
-        padding: 10,
+        backgroundColor: 'white',
+        padding: 15,
+        paddingHorizontal: 30,
         borderWidth: 1,
-        borderColor: 'black',
+        borderColor: 'grey',
         borderRadius: 10,
     },
     btnText: {
-        color: 'white',
+        color: 'black',
         paddingHorizontal: 10,
-        fontSize: 15,
+        fontSize: 18,
     },
 });

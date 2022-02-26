@@ -3747,4 +3747,6 @@ export default [
     'galio',
     'hiede',
     'lamen',
+    'caras',
+    'cosas',
 ];

@@ -11,31 +11,31 @@ import { LinearGradient } from 'expo-linear-gradient';
 export default function MainScreen({ renderGame }) {
     return (
         <LinearGradient
-            colors={['#296636', '#419152', '#001c01']}
+            colors={['#39DA80', '#6bdbad', '#48EBE5']}
             style={styles.container}
         >
-            <Text style={styles.title}>PALABROS</Text>
+            <Text style={styles.title}>Palabros</Text>
             <View style={styles.menu}>
                 <TouchableOpacity
-                    activeOpacity={0.6}
+                    activeOpacity={0.75}
                     style={styles.menuButtons}
                     onPress={() => renderGame('normal')}
                 >
-                    <Text style={styles.menuText}>JUEGO NORMAL</Text>
+                    <Text style={styles.menuText}>Juego Normal</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    activeOpacity={0.6}
+                    activeOpacity={0.75}
                     style={styles.menuButtons}
                     onPress={() => renderGame('daily')}
                 >
-                    <Text style={styles.menuText}>JUEGO DIARIO</Text>
+                    <Text style={styles.menuText}>Juego Diario</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     activeOpacity={0.75}
                     style={styles.menuButtons}
                     onPress={() => renderGame('instructions')}
                 >
-                    <Text style={styles.menuText}>CÓMO JUGAR</Text>
+                    <Text style={styles.menuText}>Cómo jugar</Text>
                 </TouchableOpacity>
             </View>
             <Text
@@ -52,25 +52,26 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
-        justifyContent: 'space-evenly',
         alignItems: 'center',
         paddingVertical: 80,
         backgroundColor: '#296636',
     },
     title: {
         fontSize: 50,
+        color: '#313333',
+        fontFamily: 'Roboto',
     },
     menu: {
-        marginTop: 30,
+        marginTop: 100,
     },
     menuButtons: {
         padding: 8,
-        paddingHorizontal: 25,
+        paddingHorizontal: 50,
         marginVertical: 10,
-        borderWidth: 1,
-        borderColor: 'black',
+        borderWidth: 0.75,
+        borderColor: 'grey',
         borderRadius: 10,
-        backgroundColor: 'white',
+        backgroundColor: '#b0e9f7',
     },
     menuText: {
         fontSize: 25,
@@ -79,6 +80,6 @@ const styles = StyleSheet.create({
     footer: {
         position: 'absolute',
         bottom: 10,
-        color: 'white',
+        color: '#313333',
     },
 });

@@ -15,7 +15,7 @@ export default function HowToPlay({ renderGame }) {
 
     return (
         <LinearGradient
-            colors={['#296636', '#419152', '#001c01']}
+            colors={['#39DA80', '#6bdbad', '#48EBE5']}
             style={styles.screen}
         >
             <TouchableOpacity
@@ -135,14 +135,14 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
     },
     headerL: {
-        backgroundColor: Colors.correct,
-        borderColor: 'black',
-        borderWidth: 1,
-        borderRadius: 100,
+        backgroundColor: 'white',
+        borderColor: 'grey',
+        borderWidth: 0.75,
+        borderRadius: 12,
         padding: 15,
     },
     headerS: {
-        backgroundColor: Colors.correct,
+        backgroundColor: 'white',
         borderColor: 'black',
         borderWidth: 1,
         borderRadius: 100,
@@ -152,6 +152,7 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: -50,
     },
     titleL: {
         fontSize: 20,
@@ -172,14 +173,14 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         width: 280,
         paddingRight: 10,
-        color: 'white',
+        color: '#343838',
     },
     textS: {
         fontSize: 12,
         textAlign: 'center',
         width: 280,
         paddingRight: 8,
-        color: 'white',
+        color: '#343838',
     },
     colorInstructions: {
         flexDirection: 'row',
