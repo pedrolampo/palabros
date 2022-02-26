@@ -4,7 +4,7 @@
         "slug": "palabros",
         "version": "1.8.0",
         "orientation": "portrait",
-        "icon": "./assets/512.png",
+        "icon": "./assets/1024.png",
         "splash": {
             "image": "./assets/splash.png",
             "resizeMode": "contain",
@@ -21,7 +21,7 @@
         },
         "android": {
             "adaptiveIcon": {
-                "foregroundImage": "./assets/512.png",
+                "foregroundImage": "./assets/1024.png",
                 "backgroundColor": "#48EBE5"
             },
             "package": "com.pedrolampo.palabros",
@@ -29,7 +29,7 @@
             "permissions": []
         },
         "web": {
-            "favicon": "./assets/512.png"
+            "favicon": "./assets/1024.png"
         },
         "description": ""
     }

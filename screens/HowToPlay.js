@@ -138,14 +138,14 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderColor: 'grey',
         borderWidth: 0.75,
-        borderRadius: 12,
+        borderRadius: 8,
         padding: 15,
     },
     headerS: {
         backgroundColor: 'white',
         borderColor: 'black',
         borderWidth: 1,
-        borderRadius: 100,
+        borderRadius: 8,
         padding: 10,
     },
     container: {
