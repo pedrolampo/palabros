@@ -37,16 +37,16 @@ export default function MainScreen({ renderGame }) {
                 <TouchableOpacity
                     activeOpacity={0.75}
                     style={styles.menuButtons}
-                    onPress={() => renderGame('instructions')}
+                    onPress={() => renderGame('stats')}
                 >
-                    <Text style={styles.menuText}>Cómo jugar</Text>
+                    <Text style={styles.menuText}>Estadísticas</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     activeOpacity={0.75}
                     style={styles.menuButtons}
-                    onPress={() => renderGame('stats')}
+                    onPress={() => renderGame('instructions')}
                 >
-                    <Text style={styles.menuText}>Estadísticas</Text>
+                    <Text style={styles.menuText}>Cómo jugar</Text>
                 </TouchableOpacity>
             </View>
             <Text
