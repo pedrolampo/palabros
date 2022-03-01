@@ -20,7 +20,8 @@ const newTargetWord = () => {
 
 newTargetWord();
 
-export default function GameScreen({ renderGame }) {
+export default function GameScreen({ renderGame, stats }) {
+    console.log(targetWord);
     const [gameOver, setGameOver] = useState(false);
 
     const [notification, setNotification] = useState(false);
@@ -101,6 +102,7 @@ export default function GameScreen({ renderGame }) {
                 setGuessNumber={setGuessNumber}
                 setSubmitedGuess={setSubmitedGuess}
                 restartGame={restartGame}
+                stats={stats}
             />
 
             <ErrorNotification

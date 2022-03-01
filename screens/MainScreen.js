@@ -41,6 +41,13 @@ export default function MainScreen({ renderGame }) {
                 >
                     <Text style={styles.menuText}>Cómo jugar</Text>
                 </TouchableOpacity>
+                <TouchableOpacity
+                    activeOpacity={0.75}
+                    style={styles.menuButtons}
+                    onPress={() => renderGame('stats')}
+                >
+                    <Text style={styles.menuText}>Estadísticas</Text>
+                </TouchableOpacity>
             </View>
             <Text
                 onPress={() => Linking.openURL('https://github.com/pedrolampo')}
@@ -65,9 +72,6 @@ const styles = StyleSheet.create({
         height: 220,
         resizeMode: 'stretch',
         margin: -20,
-    },
-    menu: {
-        marginTop: 5,
     },
     menuButtons: {
         padding: 10,

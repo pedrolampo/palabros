@@ -9,6 +9,7 @@ import {
 
 import Colors from '../constants/colors';
 import targetWords from '../constants/targetWords';
+import { storeStats } from '../functions/fetchStats';
 
 const Keyboard = (props) => {
     const { width } = useWindowDimensions();
@@ -42,13 +43,31 @@ const Keyboard = (props) => {
         if (props.targetWord === props.guess.toLowerCase()) {
             props.setGameOver(true);
             props.setNotification('Has ganado!');
+            props.stats.current = {
+                ...props.stats.current,
+                played: (props.stats.current.played += 1),
+                streak: (props.stats.current.streak += 1),
+                wins: props.stats.current.wins + 1,
+                maxStreak:
+                    props.stats.current.streak > props.stats.current.maxStreak
+                        ? props.stats.current.streak
+                        : props.stats.current.maxStreak,
+            };
+            storeStats(props.stats.current);
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'won';
             if (props.storeData) props.storeData();
             return;
         }
 
         if (props.guessNumber >= 5) {
+            props.setGameOver(true);
             props.setNotification(props.targetWord);
+            props.stats.current = {
+                ...props.stats.current,
+                played: (props.stats.current.played += 1),
+                streak: 0,
+            };
+            storeStats(props.stats.current);
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'lost';
             if (props.storeData) props.storeData();
             return;

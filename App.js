@@ -7,13 +7,21 @@ import MainScreen from './screens/MainScreen';
 import GameScreen from './screens/GameScreen';
 import DailyGameScreen from './screens/DailyGameScreen';
 import HowToPlay from './screens/HowToPlay';
+import Stats from './screens/StatsScreen';
 
+import Colors from './constants/colors';
 import { myFonts } from './constants/fonts';
 import { allowDailyWord } from './functions/allowDailyWord';
-import Colors from './constants/colors';
+import { fetchStats } from './functions/fetchStats';
 
 export default function App() {
     const [normalGame, setNormalGame] = useState('menu');
+
+    const fetchedStats = fetchStats();
+    const stats = useRef({});
+    stats.current = fetchedStats;
+    console.log(stats);
+
     const dailyWordAllowed = useRef('true');
     myFonts();
 
@@ -42,7 +50,7 @@ export default function App() {
 
     const RenderGame = () => {
         if (normalGame === 'normal') {
-            return <GameScreen renderGame={setNormalGame} />;
+            return <GameScreen renderGame={setNormalGame} stats={stats} />;
         }
         if (normalGame === 'daily') {
             return (
@@ -53,6 +61,9 @@ export default function App() {
                     dailyWordAllowed={dailyWordAllowed}
                 />
             );
+        }
+        if (normalGame === 'stats') {
+            return <Stats stats={stats} renderGame={setNormalGame} />;
         }
         if (normalGame === 'instructions') {
             return <HowToPlay renderGame={setNormalGame} />;

@@ -28,5 +28,3 @@ export function allowDailyWord(dailyWordAllowed, storedData) {
         getDate();
     }, []);
 }
-
-//

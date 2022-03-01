@@ -219,12 +219,12 @@ const styles = StyleSheet.create({
     },
     exampleTextL: {
         fontSize: 25,
-        color: 'black',
+        color: 'white',
         fontFamily: 'MontserratMedium',
     },
     exampleTextS: {
         fontSize: 15,
-        color: 'black',
+        color: 'white',
         fontFamily: 'MontserratMedium',
     },
 });
