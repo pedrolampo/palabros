@@ -25,7 +25,7 @@
                 "backgroundColor": "#48EBE5"
             },
             "package": "com.pedrolampo.palabros",
-            "versionCode": 11,
+            "versionCode": 13,
             "permissions": []
         },
         "web": {

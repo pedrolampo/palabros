@@ -13,7 +13,15 @@ export function fetchStats() {
     useEffect(() => {
         getStats();
     }, []);
-    return stats;
+
+    if (Object.keys(stats).length === 0) {
+        return {
+            played: 0,
+            streak: 0,
+            maxStreak: 0,
+            wins: 0,
+        };
+    } else return stats;
 }
 
 export const storeStats = async (newStats) => {
