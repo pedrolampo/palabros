@@ -53,9 +53,9 @@ const Keyboard = (props) => {
                         ? props.stats.current.streak
                         : props.stats.current.maxStreak,
             };
-            storeStats(props.stats.current);
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'won';
             if (props.storeData) props.storeData();
+            storeStats(props.stats.current);
             return;
         }
 
@@ -64,12 +64,12 @@ const Keyboard = (props) => {
             props.setNotification(props.targetWord);
             props.stats.current = {
                 ...props.stats.current,
+                streak: (props.stats.current.streak = 0),
                 played: (props.stats.current.played += 1),
-                streak: 0,
             };
-            storeStats(props.stats.current);
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'lost';
             if (props.storeData) props.storeData();
+            storeStats(props.stats.current);
             return;
         }
 

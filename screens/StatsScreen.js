@@ -7,12 +7,10 @@ import {
     useWindowDimensions,
 } from 'react-native';
 
-import { fetchStats } from '../functions/fetchStats';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Stats({ renderGame, stats }) {
     const { width } = useWindowDimensions();
-    fetchStats();
 
     return (
         <LinearGradient
