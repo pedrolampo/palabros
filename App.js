@@ -20,7 +20,6 @@ export default function App() {
     const fetchedStats = fetchStats();
     const stats = useRef({});
     stats.current = fetchedStats;
-    console.log(stats);
 
     const dailyWordAllowed = useRef('true');
     myFonts();
