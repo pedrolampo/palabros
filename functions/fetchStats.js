@@ -14,7 +14,7 @@ export function fetchStats() {
         getStats();
     }, []);
 
-    if (Object.keys(stats).length === 0) {
+    if (!stats) {
         return {
             played: 0,
             streak: 0,

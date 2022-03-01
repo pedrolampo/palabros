@@ -43,33 +43,38 @@ const Keyboard = (props) => {
         if (props.targetWord === props.guess.toLowerCase()) {
             props.setGameOver(true);
             props.setNotification('Has ganado!');
-            props.stats.current = {
-                ...props.stats.current,
-                played: (props.stats.current.played += 1),
-                streak: (props.stats.current.streak += 1),
-                wins: props.stats.current.wins + 1,
-                maxStreak:
-                    props.stats.current.streak > props.stats.current.maxStreak
-                        ? props.stats.current.streak
-                        : props.stats.current.maxStreak,
-            };
+            if (props.stats) {
+                props.stats.current = {
+                    ...props.stats.current,
+                    played: (props.stats.current.played += 1),
+                    streak: (props.stats.current.streak += 1),
+                    wins: props.stats.current.wins + 1,
+                    maxStreak:
+                        props.stats.current.streak >
+                        props.stats.current.maxStreak
+                            ? props.stats.current.streak
+                            : props.stats.current.maxStreak,
+                };
+            }
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'won';
             if (props.storeData) props.storeData();
-            storeStats(props.stats.current);
+            if (storeStats) storeStats(props.stats.current);
             return;
         }
 
         if (props.guessNumber >= 5) {
             props.setGameOver(true);
             props.setNotification(props.targetWord);
-            props.stats.current = {
-                ...props.stats.current,
-                streak: (props.stats.current.streak = 0),
-                played: (props.stats.current.played += 1),
-            };
+            if (props.stats) {
+                props.stats.current = {
+                    ...props.stats.current,
+                    streak: (props.stats.current.streak = 0),
+                    played: (props.stats.current.played += 1),
+                };
+            }
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'lost';
             if (props.storeData) props.storeData();
-            storeStats(props.stats.current);
+            if (storeStats) storeStats(props.stats.current);
             return;
         }
 

@@ -28,10 +28,13 @@ export default function Stats({ renderGame, stats }) {
                     </View>
                     <View style={styles.statsContainer}>
                         <Text style={styles.statNumber}>
-                            {(
-                                (stats.current.wins / stats.current.played) *
-                                100
-                            ).toFixed(2)}
+                            {stats.current.wins
+                                ? (
+                                      (stats.current.wins /
+                                          stats.current.played) *
+                                      100
+                                  ).toFixed(2)
+                                : 0}
                             %
                         </Text>
                         <Text style={styles.statTitle}>% Victorias</Text>
@@ -53,6 +56,9 @@ export default function Stats({ renderGame, stats }) {
                         <Text style={styles.statTitle}>Mayor Racha</Text>
                     </View>
                 </View>
+                <Text style={styles.altText}>
+                    (Solo aplican al juego normal)
+                </Text>
             </View>
             <TouchableOpacity
                 style={width < 380 ? styles.backBtnS : styles.backBtnL}
@@ -99,6 +105,9 @@ const styles = StyleSheet.create({
     statTitle: {
         fontFamily: 'MontserratMedium',
         fontSize: 20,
+    },
+    altText: {
+        marginTop: 20,
     },
     backBtnL: {
         backgroundColor: 'white',
