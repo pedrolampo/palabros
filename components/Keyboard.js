@@ -58,7 +58,7 @@ const Keyboard = (props) => {
             }
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'won';
             if (props.storeData) props.storeData();
-            if (storeStats) storeStats(props.stats.current);
+            if (props.stats) storeStats(props.stats.current);
             return;
         }
 
@@ -74,7 +74,7 @@ const Keyboard = (props) => {
             }
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'lost';
             if (props.storeData) props.storeData();
-            if (storeStats) storeStats(props.stats.current);
+            if (props.stats) storeStats(props.stats.current);
             return;
         }
 

@@ -78,7 +78,6 @@ export default function DailyGameScreen({
     allowDailyWord(dailyWordAllowed, storeData);
     getData();
 
-    // HACER QUE NO TE DEJE JUGAR SI YA LO HICISTE
     if (JSON.stringify(dailyWordAllowed).includes('won')) {
         return (
             <DailyWordNotification
