@@ -98,7 +98,11 @@ export default function DailyGameScreen({
 
     return (
         <View style={styles.screen}>
-            <Header renderGame={renderGame} restart={restartGame} />
+            <Header
+                renderGame={renderGame}
+                restart={restartGame}
+                title={'Diario'}
+            />
 
             <GuessGrid
                 guess={guess}

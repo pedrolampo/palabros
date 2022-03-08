@@ -7,20 +7,25 @@ import {
     useWindowDimensions,
 } from 'react-native';
 
-const Header = ({ renderGame, restart }) => {
+import Colors from '../constants/colors';
+
+const Header = ({ renderGame, restart, title }) => {
     const { width } = useWindowDimensions();
 
     return (
         <View style={styles.header}>
-            <TouchableOpacity onPress={() => renderGame('menu')}>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => renderGame('menu')}
+            >
                 <Text style={width < 380 ? styles.textS : styles.textL}>
                     Menú
                 </Text>
             </TouchableOpacity>
             <Text style={width < 380 ? styles.titleS : styles.titleL}>
-                Palabros
+                {title}
             </Text>
-            <TouchableOpacity onPress={restart}>
+            <TouchableOpacity style={styles.button} onPress={restart}>
                 <Text style={width < 380 ? styles.textS : styles.textL}>
                     Reset
                 </Text>
@@ -62,6 +67,14 @@ const styles = StyleSheet.create({
         width: 200,
         textAlign: 'center',
         fontFamily: 'MontserratMedium',
+    },
+    button: {
+        backgroundColor: Colors.buttonBackground,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 5,
+        borderWidth: 0.75,
+        borderColor: 'black',
     },
 });
 

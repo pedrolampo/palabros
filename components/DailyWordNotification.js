@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+
 import { LinearGradient } from 'expo-linear-gradient';
+import Colors from '../constants/colors';
 
 export default function DailyWordNotification({
     status,
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
     button: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: Colors.buttonBackground,
         padding: 15,
         paddingHorizontal: 30,
         borderWidth: 1,

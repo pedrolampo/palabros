@@ -7,6 +7,8 @@ import {
     Linking,
     Image,
 } from 'react-native';
+
+import Colors from '../constants/colors';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function MainScreen({ renderGame }) {
@@ -80,7 +82,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'black',
         borderRadius: 5,
-        backgroundColor: '#b0e9f7',
+        backgroundColor: Colors.buttonBackground,
     },
     menuText: {
         fontSize: 25,

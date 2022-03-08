@@ -67,7 +67,11 @@ export default function GameScreen({ renderGame, stats }) {
 
     return (
         <View style={styles.screen}>
-            <Header renderGame={renderGame} restart={restartGame} />
+            <Header
+                renderGame={renderGame}
+                restart={restartGame}
+                title={'Normal'}
+            />
 
             <GuessGrid
                 guess={guess}

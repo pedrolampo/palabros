@@ -18,13 +18,6 @@ export default function HowToPlay({ renderGame }) {
             colors={['#39DA80', '#6bdbad', '#48EBE5']}
             style={styles.screen}
         >
-            <TouchableOpacity
-                activeOpacity={0.75}
-                style={width < 380 ? styles.headerS : styles.headerL}
-                onPress={() => renderGame('menu')}
-            >
-                <Text>VOLVER AL MENÚ</Text>
-            </TouchableOpacity>
             <View style={styles.container}>
                 <View>
                     <Text style={width < 380 ? styles.titleS : styles.titleL}>
@@ -122,6 +115,13 @@ export default function HowToPlay({ renderGame }) {
                     </View>
                 </View>
             </View>
+            <TouchableOpacity
+                activeOpacity={0.75}
+                style={width < 380 ? styles.buttonS : styles.buttonL}
+                onPress={() => renderGame('menu')}
+            >
+                <Text>VOLVER AL MENÚ</Text>
+            </TouchableOpacity>
         </LinearGradient>
     );
 }
@@ -134,15 +134,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-evenly',
     },
-    headerL: {
-        backgroundColor: 'white',
+    buttonL: {
+        backgroundColor: Colors.buttonBackground,
         borderColor: 'grey',
-        borderWidth: 0.75,
+        borderWidth: 1,
         borderRadius: 8,
         padding: 15,
     },
-    headerS: {
-        backgroundColor: 'white',
+    buttonS: {
+        backgroundColor: Colors.buttonBackground,
         borderColor: 'black',
         borderWidth: 1,
         borderRadius: 8,
@@ -152,7 +152,6 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: -50,
     },
     titleL: {
         fontSize: 20,
