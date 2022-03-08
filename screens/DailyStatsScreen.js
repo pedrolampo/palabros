@@ -10,7 +10,7 @@ import {
 import Colors from '../constants/colors';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function Stats({ renderGame, stats }) {
+export default function DailyStats({ renderGame, stats }) {
     const { width } = useWindowDimensions();
 
     return (
@@ -18,7 +18,7 @@ export default function Stats({ renderGame, stats }) {
             colors={['#39DA80', '#6bdbad', '#48EBE5']}
             style={styles.screen}
         >
-            <Text style={styles.title}>Estadísticas</Text>
+            <Text style={styles.title}>Estadísticas Diarias</Text>
             <View style={styles.mainContent}>
                 <View style={styles.statsRow}>
                     <View style={styles.statsContainer}>
@@ -70,9 +70,9 @@ export default function Stats({ renderGame, stats }) {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={width < 380 ? styles.backBtnS : styles.backBtnL}
-                    onPress={() => renderGame('dailyStats')}
+                    onPress={() => renderGame('stats')}
                 >
-                    <Text style={styles.btnText}>Diarias</Text>
+                    <Text style={styles.btnText}>Normal</Text>
                 </TouchableOpacity>
             </View>
         </LinearGradient>
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: 'MontserratMedium',
         fontSize: 45,
+        textAlign: 'center',
     },
     mainContent: {
         justifyContent: 'center',

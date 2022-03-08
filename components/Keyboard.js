@@ -56,9 +56,23 @@ const Keyboard = (props) => {
                             : props.stats.current.maxStreak,
                 };
             }
+            if (props.dailyStats) {
+                props.dailyStats.current = {
+                    ...props.dailyStats.current,
+                    played: (props.dailyStats.current.played += 1),
+                    streak: (props.dailyStats.current.streak += 1),
+                    wins: props.dailyStats.current.wins + 1,
+                    maxStreak:
+                        props.dailyStats.current.streak >
+                        props.dailyStats.current.maxStreak
+                            ? props.dailyStats.current.streak
+                            : props.dailyStats.current.maxStreak,
+                };
+            }
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'won';
             if (props.storeData) props.storeData();
             if (props.stats) storeStats(props.stats.current);
+            if (props.dailyStats) storeStats(props.dailyStats.current);
             return;
         }
 
@@ -72,9 +86,17 @@ const Keyboard = (props) => {
                     played: (props.stats.current.played += 1),
                 };
             }
+            if (props.dailyStats) {
+                props.dailyStats.current = {
+                    ...props.dailyStats.current,
+                    streak: (props.dailyStats.current.streak = 0),
+                    played: (props.dailyStats.current.played += 1),
+                };
+            }
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'lost';
             if (props.storeData) props.storeData();
             if (props.stats) storeStats(props.stats.current);
+            if (props.dailyStats) storeStats(props.dailyStats.current);
             return;
         }
 

@@ -30,6 +30,7 @@ export default function DailyGameScreen({
     storeData,
     getData,
     dailyWordAllowed,
+    dailyStats,
 }) {
     const [gameOver, setGameOver] = useState(false);
 
@@ -138,6 +139,7 @@ export default function DailyGameScreen({
                 restartGame={restartGame}
                 dailyWordAllowed={dailyWordAllowed}
                 storeData={storeData}
+                dailyStats={dailyStats}
             />
 
             <ErrorNotification
