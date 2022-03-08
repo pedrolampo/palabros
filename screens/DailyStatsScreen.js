@@ -10,7 +10,7 @@ import {
 import Colors from '../constants/colors';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function DailyStats({ renderGame, stats }) {
+export default function DailyStats({ renderGame, dailyStats }) {
     const { width } = useWindowDimensions();
 
     return (
@@ -18,21 +18,23 @@ export default function DailyStats({ renderGame, stats }) {
             colors={['#39DA80', '#6bdbad', '#48EBE5']}
             style={styles.screen}
         >
-            <Text style={styles.title}>Estadísticas Diarias</Text>
+            <Text style={styles.title}>Estadísticas Juego Diario</Text>
             <View style={styles.mainContent}>
                 <View style={styles.statsRow}>
                     <View style={styles.statsContainer}>
                         <Text style={styles.statNumber}>
-                            {stats.current.played ? stats.current.played : 0}
+                            {dailyStats.current.played
+                                ? dailyStats.current.played
+                                : 0}
                         </Text>
                         <Text style={styles.statTitle}>Nº Jugados</Text>
                     </View>
                     <View style={styles.statsContainer}>
                         <Text style={styles.statNumber}>
-                            {stats.current.wins
+                            {dailyStats.current.wins
                                 ? (
-                                      (stats.current.wins /
-                                          stats.current.played) *
+                                      (dailyStats.current.wins /
+                                          dailyStats.current.played) *
                                       100
                                   ).toFixed(2)
                                 : 0}
@@ -44,22 +46,21 @@ export default function DailyStats({ renderGame, stats }) {
                 <View style={styles.statsRow}>
                     <View style={styles.statsContainer}>
                         <Text style={styles.statNumber}>
-                            {stats.current.streak ? stats.current.streak : 0}
+                            {dailyStats.current.streak
+                                ? dailyStats.current.streak
+                                : 0}
                         </Text>
                         <Text style={styles.statTitle}>Racha Actual</Text>
                     </View>
                     <View style={styles.statsContainer}>
                         <Text style={styles.statNumber}>
-                            {stats.current.maxStreak
-                                ? stats.current.maxStreak
+                            {dailyStats.current.maxStreak
+                                ? dailyStats.current.maxStreak
                                 : 0}
                         </Text>
                         <Text style={styles.statTitle}>Mayor Racha</Text>
                     </View>
                 </View>
-                <Text style={styles.altText}>
-                    (Solo aplican al juego normal)
-                </Text>
             </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'MontserratMedium',
-        fontSize: 45,
+        fontSize: 35,
         textAlign: 'center',
     },
     mainContent: {

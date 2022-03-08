@@ -10,6 +10,7 @@ import {
 import Colors from '../constants/colors';
 import targetWords from '../constants/targetWords';
 import { storeStats } from '../functions/fetchStats';
+import { storeDailyStats } from '../functions/fetchDailyStats';
 
 const Keyboard = (props) => {
     const { width } = useWindowDimensions();
@@ -72,7 +73,7 @@ const Keyboard = (props) => {
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'won';
             if (props.storeData) props.storeData();
             if (props.stats) storeStats(props.stats.current);
-            if (props.dailyStats) storeStats(props.dailyStats.current);
+            if (props.dailyStats) storeDailyStats(props.dailyStats.current);
             return;
         }
 
@@ -96,7 +97,7 @@ const Keyboard = (props) => {
             if (props.dailyWordAllowed) props.dailyWordAllowed.current = 'lost';
             if (props.storeData) props.storeData();
             if (props.stats) storeStats(props.stats.current);
-            if (props.dailyStats) storeStats(props.dailyStats.current);
+            if (props.dailyStats) storeDailyStats(props.dailyStats.current);
             return;
         }
 

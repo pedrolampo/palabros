@@ -18,7 +18,7 @@ export default function Stats({ renderGame, stats }) {
             colors={['#39DA80', '#6bdbad', '#48EBE5']}
             style={styles.screen}
         >
-            <Text style={styles.title}>Estadísticas</Text>
+            <Text style={styles.title}>Estadísticas Juego Normal</Text>
             <View style={styles.mainContent}>
                 <View style={styles.statsRow}>
                     <View style={styles.statsContainer}>
@@ -57,9 +57,6 @@ export default function Stats({ renderGame, stats }) {
                         <Text style={styles.statTitle}>Mayor Racha</Text>
                     </View>
                 </View>
-                <Text style={styles.altText}>
-                    (Solo aplican al juego normal)
-                </Text>
             </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
@@ -89,7 +86,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'MontserratMedium',
-        fontSize: 45,
+        fontSize: 35,
+        textAlign: 'center',
     },
     mainContent: {
         justifyContent: 'center',

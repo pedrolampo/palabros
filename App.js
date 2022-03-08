@@ -72,7 +72,12 @@ export default function App() {
             return <Stats stats={stats} renderGame={setNormalGame} />;
         }
         if (normalGame === 'dailyStats') {
-            return <DailyStats stats={dailyStats} renderGame={setNormalGame} />;
+            return (
+                <DailyStats
+                    dailyStats={dailyStats}
+                    renderGame={setNormalGame}
+                />
+            );
         }
         if (normalGame === 'instructions') {
             return <HowToPlay renderGame={setNormalGame} />;
