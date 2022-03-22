@@ -12,6 +12,8 @@ import targetWords from '../constants/targetWords';
 import { storeStats } from '../functions/fetchStats';
 import { storeDailyStats } from '../functions/fetchDailyStats';
 
+const guessLetters = [];
+
 const Keyboard = (props) => {
     const { width } = useWindowDimensions();
 
@@ -40,6 +42,10 @@ const Keyboard = (props) => {
         if (props.guessNumber === 3) props.setGuess4(props.guess);
         if (props.guessNumber === 4) props.setGuess5(props.guess);
         if (props.guessNumber === 5) props.setGuess6(props.guess);
+
+        // let notPushedLetters = props.guess.split('');
+        guessLetters.push(props.guess);
+        console.log(guessLetters);
 
         if (props.targetWord === props.guess.toLowerCase()) {
             props.setGameOver(true);
