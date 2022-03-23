@@ -136,10 +136,11 @@ const styles = StyleSheet.create({
     },
     buttonL: {
         backgroundColor: Colors.buttonBackground,
-        borderColor: 'grey',
+        borderColor: 'black',
         borderWidth: 1,
         borderRadius: 8,
         padding: 15,
+        paddingHorizontal: 30,
     },
     buttonS: {
         backgroundColor: Colors.buttonBackground,

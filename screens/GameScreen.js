@@ -23,6 +23,8 @@ newTargetWord();
 export default function GameScreen({ renderGame, stats }) {
     const [gameOver, setGameOver] = useState(false);
 
+    const [guessLetters, setGuessLetters] = useState([]);
+
     const [notification, setNotification] = useState(false);
     const [notificationText, setNotificationText] = useState('');
 
@@ -60,6 +62,7 @@ export default function GameScreen({ renderGame, stats }) {
         setGuess6('');
         setSubmitedGuess('');
         setGuessNumber(0);
+        setGuessLetters([]);
         setGameOver(false);
         setNotification(false);
         newTargetWord();
@@ -106,6 +109,8 @@ export default function GameScreen({ renderGame, stats }) {
                 setSubmitedGuess={setSubmitedGuess}
                 restartGame={restartGame}
                 stats={stats}
+                guessLetters={guessLetters}
+                setGuessLetters={setGuessLetters}
             />
 
             <ErrorNotification

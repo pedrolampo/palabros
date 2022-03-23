@@ -34,6 +34,8 @@ export default function DailyGameScreen({
 }) {
     const [gameOver, setGameOver] = useState(false);
 
+    const [guessLetters, setGuessLetters] = useState([]);
+
     const [notification, setNotification] = useState(false);
     const [notificationText, setNotificationText] = useState('');
 
@@ -140,6 +142,8 @@ export default function DailyGameScreen({
                 dailyWordAllowed={dailyWordAllowed}
                 storeData={storeData}
                 dailyStats={dailyStats}
+                guessLetters={guessLetters}
+                setGuessLetters={setGuessLetters}
             />
 
             <ErrorNotification

@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     backBtnL: {
-        borderColor: 'grey',
+        borderColor: 'black',
         borderWidth: 1,
         borderRadius: 5,
         paddingVertical: 10,

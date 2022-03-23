@@ -3749,4 +3749,8 @@ export default [
     'lamen',
     'caras',
     'cosas',
+    'armas',
+    'nudos',
+    'gatos',
+    'altos',
 ];

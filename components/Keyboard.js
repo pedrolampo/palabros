@@ -11,8 +11,7 @@ import Colors from '../constants/colors';
 import targetWords from '../constants/targetWords';
 import { storeStats } from '../functions/fetchStats';
 import { storeDailyStats } from '../functions/fetchDailyStats';
-
-const guessLetters = [];
+import updateKeyColor from '../functions/updateKeyColor';
 
 const Keyboard = (props) => {
     const { width } = useWindowDimensions();
@@ -43,9 +42,7 @@ const Keyboard = (props) => {
         if (props.guessNumber === 4) props.setGuess5(props.guess);
         if (props.guessNumber === 5) props.setGuess6(props.guess);
 
-        // let notPushedLetters = props.guess.split('');
-        guessLetters.push(props.guess);
-        console.log(guessLetters);
+        props.setGuessLetters([...props.guessLetters, props.guess]);
 
         if (props.targetWord === props.guess.toLowerCase()) {
             props.setGameOver(true);
@@ -121,7 +118,11 @@ const Keyboard = (props) => {
         <View style={width < 380 ? styles.keyboardS : styles.keyboardL}>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'q'
+                )}
                 onPress={keyPressHandler.bind(this, 'Q')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -130,7 +131,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'w'
+                )}
                 onPress={keyPressHandler.bind(this, 'W')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -139,7 +144,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'e'
+                )}
                 onPress={keyPressHandler.bind(this, 'E')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -148,7 +157,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'r'
+                )}
                 onPress={keyPressHandler.bind(this, 'R')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -157,7 +170,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    't'
+                )}
                 onPress={keyPressHandler.bind(this, 'T')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -166,7 +183,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'y'
+                )}
                 onPress={keyPressHandler.bind(this, 'Y')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -175,7 +196,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'u'
+                )}
                 onPress={keyPressHandler.bind(this, 'U')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -184,7 +209,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'i'
+                )}
                 onPress={keyPressHandler.bind(this, 'I')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -193,7 +222,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'o'
+                )}
                 onPress={keyPressHandler.bind(this, 'O')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -202,7 +235,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'p'
+                )}
                 onPress={keyPressHandler.bind(this, 'P')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -212,7 +249,11 @@ const Keyboard = (props) => {
             <View></View>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'a'
+                )}
                 onPress={keyPressHandler.bind(this, 'A')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -221,7 +262,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    's'
+                )}
                 onPress={keyPressHandler.bind(this, 'S')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -230,7 +275,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'd'
+                )}
                 onPress={keyPressHandler.bind(this, 'D')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -239,7 +288,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'f'
+                )}
                 onPress={keyPressHandler.bind(this, 'F')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -248,7 +301,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'g'
+                )}
                 onPress={keyPressHandler.bind(this, 'G')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -257,7 +314,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'h'
+                )}
                 onPress={keyPressHandler.bind(this, 'H')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -266,7 +327,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'j'
+                )}
                 onPress={keyPressHandler.bind(this, 'J')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -275,7 +340,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'k'
+                )}
                 onPress={keyPressHandler.bind(this, 'K')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -284,7 +353,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'l'
+                )}
                 onPress={keyPressHandler.bind(this, 'L')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -293,7 +366,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'ñ'
+                )}
                 onPress={keyPressHandler.bind(this, 'Ñ')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -312,7 +389,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'z'
+                )}
                 onPress={keyPressHandler.bind(this, 'Z')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -321,7 +402,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'x'
+                )}
                 onPress={keyPressHandler.bind(this, 'X')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -330,7 +415,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'c'
+                )}
                 onPress={keyPressHandler.bind(this, 'C')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -339,7 +428,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'v'
+                )}
                 onPress={keyPressHandler.bind(this, 'V')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -348,7 +441,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'b'
+                )}
                 onPress={keyPressHandler.bind(this, 'B')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -357,7 +454,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'n'
+                )}
                 onPress={keyPressHandler.bind(this, 'N')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
@@ -366,7 +467,11 @@ const Keyboard = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={0.6}
-                style={width < 380 ? styles.keyS : styles.keyL}
+                style={updateKeyColor(
+                    props.guessLetters,
+                    props.targetWord,
+                    'm'
+                )}
                 onPress={keyPressHandler.bind(this, 'M')}
             >
                 <Text style={width < 380 ? styles.keyTextS : styles.keyTextL}>
