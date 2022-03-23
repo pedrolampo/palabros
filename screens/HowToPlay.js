@@ -120,7 +120,7 @@ export default function HowToPlay({ renderGame }) {
                 style={width < 380 ? styles.buttonS : styles.buttonL}
                 onPress={() => renderGame('menu')}
             >
-                <Text>VOLVER AL MENÚ</Text>
+                <Text style={styles.btnText}>Volver al Menú</Text>
             </TouchableOpacity>
         </LinearGradient>
     );
@@ -138,16 +138,19 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.buttonBackground,
         borderColor: 'black',
         borderWidth: 1,
-        borderRadius: 8,
+        borderRadius: 5,
         padding: 15,
-        paddingHorizontal: 30,
+        paddingHorizontal: 40,
     },
     buttonS: {
         backgroundColor: Colors.buttonBackground,
         borderColor: 'black',
         borderWidth: 1,
-        borderRadius: 8,
+        borderRadius: 5,
         padding: 10,
+    },
+    btnText: {
+        fontFamily: 'MontserratMedium',
     },
     container: {
         width: '100%',

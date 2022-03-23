@@ -71,17 +71,11 @@ function updateKeyColor(lettersArray, targetWord, letter) {
                     width < 380 ? styles.keyS : styles.keyL,
                     styles.wrongLocation,
                 ];
-            } else
+            } else {
                 return [width < 380 ? styles.keyS : styles.keyL, styles.wrong];
-        } else return styles.keyL;
-
-        // if letra está en letterArray esto, else key comun
-        // [width < 380 ? styles.keyS : styles.keyL, styles.wrong];
+            }
+        } else return width < 380 ? styles.keyS : styles.keyL;
     } else return width < 380 ? styles.keyS : styles.keyL;
-}
-
-export function updateKeyTextColor() {
-    const { width } = useWindowDimensions();
 }
 
 export default updateKeyColor;
