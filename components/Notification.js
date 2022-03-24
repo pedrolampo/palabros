@@ -7,7 +7,9 @@ const Notification = ({ restartGame, text, notification }) => {
     const showText = () => {
         if (text.includes('win')) {
             return `¡HAS GANADO!\n"${text[1].toUpperCase()}"`;
-        } else return `La Palabra era:\n"${text.toUpperCase()}"`;
+        } else if (text.length > 0) {
+            return `La Palabra era:\n"${text[0].toUpperCase()}"`;
+        }
     };
 
     return (

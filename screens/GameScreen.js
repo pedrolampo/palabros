@@ -21,6 +21,7 @@ const newTargetWord = () => {
 newTargetWord();
 
 export default function GameScreen({ renderGame, stats }) {
+    console.log(targetWord);
     const [gameOver, setGameOver] = useState(false);
 
     const [guessLetters, setGuessLetters] = useState([]);

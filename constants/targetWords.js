@@ -3759,4 +3759,6 @@ export default [
     'vetas',
     'becas',
     'becar',
+    'codos',
+    'minas',
 ];

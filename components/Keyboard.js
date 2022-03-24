@@ -82,7 +82,7 @@ const Keyboard = (props) => {
 
         if (props.guessNumber >= 5) {
             props.setGameOver(true);
-            props.setNotification(props.targetWord);
+            props.setNotification([props.targetWord]);
             if (props.stats) {
                 props.stats.current = {
                     ...props.stats.current,
