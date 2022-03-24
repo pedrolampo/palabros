@@ -5,9 +5,9 @@ import Colors from '../constants/colors';
 
 const Notification = ({ restartGame, text, notification }) => {
     const showText = () => {
-        if (text === 'HAS GANADO!') {
-            return text;
-        } else return `LA PALABRA ERA: ${text}`;
+        if (text.includes('win')) {
+            return `¡HAS GANADO!\n"${text[1].toUpperCase()}"`;
+        } else return `La Palabra era:\n"${text.toUpperCase()}"`;
     };
 
     return (
@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
     },
     container: {
         position: 'absolute',
-        width: 250,
-        height: 150,
+        width: 280,
+        height: 180,
         backgroundColor: 'lightgrey',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
-        borderRadius: 20,
+        borderRadius: 10,
         borderWidth: 1,
         borderColor: 'black',
     },
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         marginBottom: 10,
         textAlign: 'center',
+        fontFamily: 'MontserratMedium',
     },
     btn: {
         backgroundColor: Colors.keys,
@@ -59,11 +60,13 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         borderWidth: 1,
         borderColor: 'black',
+        marginBottom: 8,
     },
     btnText: {
         color: 'white',
         fontSize: 15,
         fontWeight: 'bold',
+        fontFamily: 'MontserratMedium',
     },
     hide: {
         display: 'none',

@@ -3753,4 +3753,10 @@ export default [
     'nudos',
     'gatos',
     'altos',
+    'fetas',
+    'locos',
+    'temas',
+    'vetas',
+    'becas',
+    'becar',
 ];

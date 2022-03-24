@@ -11,7 +11,7 @@ const ErrorNotification = ({
     return (
         <View style={errorNotification ? styles.screen : styles.hide}>
             <View style={errorNotification ? styles.container : styles.hide}>
-                <Text style={styles.text}>{text}</Text>
+                <Text style={styles.text}>{text}.</Text>
                 <TouchableOpacity
                     style={styles.btn}
                     onPress={() => setErrorNotification(false)}
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         width: 290,
         height: 150,
         backgroundColor: 'lightgrey',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
         borderRadius: 20,
         borderWidth: 1,
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginBottom: 10,
         textAlign: 'center',
+        fontFamily: 'MontserratMedium',
     },
     btn: {
         backgroundColor: Colors.keys,
@@ -60,6 +61,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 15,
         fontWeight: 'bold',
+        fontFamily: 'MontserratMedium',
     },
     hide: {
         display: 'none',

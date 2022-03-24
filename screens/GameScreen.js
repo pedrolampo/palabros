@@ -21,12 +21,13 @@ const newTargetWord = () => {
 newTargetWord();
 
 export default function GameScreen({ renderGame, stats }) {
+    console.log(targetWord);
     const [gameOver, setGameOver] = useState(false);
 
     const [guessLetters, setGuessLetters] = useState([]);
 
     const [notification, setNotification] = useState(false);
-    const [notificationText, setNotificationText] = useState('');
+    const [notificationText, setNotificationText] = useState([]);
 
     const [errorNotification, setErrorNotification] = useState(false);
     const [errorNotificationText, setErrorNotificationText] = useState('');
@@ -121,7 +122,7 @@ export default function GameScreen({ renderGame, stats }) {
             <Notification
                 notification={notification}
                 restartGame={restartGame}
-                text={notificationText.toUpperCase()}
+                text={notificationText}
             />
 
             <StatusBar style="auto" />

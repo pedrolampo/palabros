@@ -46,7 +46,7 @@ const Keyboard = (props) => {
 
         if (props.targetWord === props.guess.toLowerCase()) {
             props.setGameOver(true);
-            props.setNotification('Has ganado!');
+            props.setNotification(['win', props.targetWord]);
             if (props.stats) {
                 props.stats.current = {
                     ...props.stats.current,
