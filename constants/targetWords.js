@@ -3761,4 +3761,6 @@ export default [
     'becar',
     'codos',
     'minas',
+    'picos',
+    'bison',
 ];
