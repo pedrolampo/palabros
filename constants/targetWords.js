@@ -3763,4 +3763,6 @@ export default [
     'minas',
     'picos',
     'bison',
+    'mario',
+    'cacho',
 ];

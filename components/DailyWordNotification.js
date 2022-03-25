@@ -20,7 +20,7 @@ export default function DailyWordNotification({
                 >
                     <Text style={styles.title}>¡{status.toUpperCase()}!</Text>
                     <Text style={styles.text}>
-                        La palabra de hoy era: {targetWord.toUpperCase()}
+                        La palabra de hoy era: "{targetWord.toUpperCase()}"
                     </Text>
                 </View>
                 <TouchableOpacity
