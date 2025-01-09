@@ -1,36 +1,46 @@
 {
-    "expo": {
-        "name": "Palabros",
-        "slug": "palabros",
-        "version": "2.3.0",
-        "orientation": "portrait",
-        "icon": "./assets/1024.png",
-        "splash": {
-            "image": "./assets/splash.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#48EBE5"
-        },
-        "updates": {
-            "fallbackToCacheTimeout": 0
-        },
-        "assetBundlePatterns": ["**/*"],
-        "ios": {
-            "supportsTablet": true,
-            "bundleIdentifier": "com.pedrolampo.palabros",
-            "buildNumber": "2.3.0"
-        },
-        "android": {
-            "adaptiveIcon": {
-                "foregroundImage": "./assets/1024.png",
-                "backgroundColor": "#48EBE5"
-            },
-            "package": "com.pedrolampo.palabros",
-            "versionCode": 15,
-            "permissions": []
-        },
-        "web": {
-            "favicon": "./assets/1024.png"
-        },
-        "description": ""
-    }
+  "expo": {
+    "name": "Palabros",
+    "slug": "palabros",
+    "version": "2.3.0",
+    "orientation": "portrait",
+    "icon": "./assets/1024.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#48EBE5"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pedrolampo.palabros",
+      "buildNumber": "2.3.0"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/1024.png",
+        "backgroundColor": "#48EBE5"
+      },
+      "package": "com.pedrolampo.palabros",
+      "versionCode": 15,
+      "permissions": []
+    },
+    "web": {
+      "favicon": "./assets/1024.png"
+    },
+    "description": "",
+    "extra": {
+      "eas": {
+        "projectId": "c241e32c-8409-4386-9f8d-cce0b59e21e7"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
 }
